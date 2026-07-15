@@ -275,6 +275,7 @@ async function submitText() {
     const { job_id } = await res.json();
     setStatus("Job submitted — waiting for subscribers to complete...");
     pollResults(job_id);
+    
   } catch (err) {
     setStatus(`Error: ${err.message}`, "error");
     analyseBtn.disabled = false;
